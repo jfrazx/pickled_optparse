@@ -8,7 +8,7 @@ version = PickledOptparse::Version::STRING
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.required_ruby_version = '~> 1.9.2' # Everyone should upgrade, now!
+    gem.required_ruby_version = '>= 2.0' # Everyone should upgrade, now!
     gem.name = "pickled_optparse"
     gem.version = version
     gem.summary = %Q{Adds required switches to Ruby's OptionParser class}
@@ -26,9 +26,9 @@ rescue LoadError
 end
 
 require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new(:spec) do |t| 
-  t.rspec_opts = ["-c", "-f progress", "-r ./spec/spec_helper.rb"] 
-  t.pattern = 'spec/*/*_spec.rb' 
+RSpec::Core::RakeTask.new(:spec) do |t|
+  t.rspec_opts = ["-c", "-f progress", "-r ./spec/spec_helper.rb"]
+  t.pattern = 'spec/*/*_spec.rb'
 end
 task :spec => :check_dependencies
 
